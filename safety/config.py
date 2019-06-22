@@ -30,7 +30,7 @@ def showarea():
         print(x)
 
 def insertreads( Acode, Timestamp, H2S = "NULL", N2_lvl = "NULL", CO_lvl = "NULL", Cl2_lvl = "NULL", Pressure_lvl="NULL", Smoke="NULL"):
-    sql = "INSERT INTO Readings (Areacode,H2S_lvl,N2_lvl,CO_lvl,Cl2_lvl,Pressure_lvl,Smoke,Timestamp) VALUES (%d, %d, %d, %d, %d, %d, %b, %s);"
+    sql = "INSERT INTO Readings (Areacode,H2S_lvl,N2_lvl,CO_lvl,Cl2_lvl,Pressure_lvl,Smoke,Timestamp) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
     val = (Acode,H2S,N2_lvl,CO_lvl,Cl2_lvl,Pressure_lvl,Smoke,Timestamp)
     mycursor = mydb.cursor()
     mycursor.execute(sql, val)
