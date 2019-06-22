@@ -1,0 +1,12 @@
+the import is(just an example) :
+import config as c
+
+c.showreads()
+
+c.showarea()
+
+c.showsubs()
+
+c.viewstations()
+
+c.updateitem("gym",13,"S","N")
