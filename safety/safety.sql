@@ -1,15 +1,18 @@
-  create table SubArea(
-     SAid int NOT NULL AUTO_INCREMENT Primary key,
-     SAName varchar(100) NOT NULL,
-     SAManager varchar(50) NOT NULL
-     );
+  CREATE database safety;
+  use safety;
  create table area(
-     Areaid int NOT NULL Primary key,
+     Areaid int NOT NULL AUTO_INCREMENT Primary key,
      AreaName varchar(50) NOT NULL,
      AreaManager varchar(50) NOT NULL,
-     subAreaid int NOT NULL,
-     FOREIGN KEY (subAreaid) REFERENCES subarea(SAid)
      );
+  create table SubArea(
+     SAid int NOT NULL Primary key,
+     Areaid int NOT NULL,
+     SAName varchar(100) NOT NULL,
+     SAManager varchar(50) NOT NULL,
+     FOREIGN KEY (Areaid) REFERENCES area(Areaid)
+     );
+
  create table Readings(
      Rid int NOT null auto_increment primary key,
      Areacode int not null,
@@ -20,5 +23,5 @@
      Pressure_lvl float,
      Smoke bool,
      Timestamp timestamp,
-     foreign key (Areacode) references area(Areaid)
+     foreign key (Areacode) references subarea(SAid)
      );
